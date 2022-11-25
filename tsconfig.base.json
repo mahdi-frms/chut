@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@chut/storage": ["packages/storage/src/index.ts"]
+      "@chut/storage": ["packages/storage/src/index.ts"],
+      "@chut/user": ["packages/user/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
