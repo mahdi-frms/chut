@@ -2,8 +2,7 @@ import * as UserService from '@chut/user';
 import { User } from '@chut/types';
 import * as jwt from 'jsonwebtoken';
 
-const JWT_KEY = 'my secret jwt key';
-const JWT_ALG = 'RS256';
+const JWT_KEY = process.env['JWT_KEY'] || 'secret';
 
 export async function userAuth(
   username: string,
@@ -16,7 +15,7 @@ export async function userAuth(
 
 export async function generateToken(user: User): Promise<string> {
   return new Promise<string>((resolve, reject) => {
-    jwt.sign(user, JWT_KEY, { algorithm: JWT_ALG }, (err, tkn) => {
+    jwt.sign({ username: user.username }, JWT_KEY, {}, (err, tkn) => {
       if (err || !tkn) reject(err);
       else resolve(tkn);
     });
