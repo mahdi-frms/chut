@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@chut/auth": ["packages/auth/src/index.ts"],
       "@chut/storage": ["packages/storage/src/index.ts"],
+      "@chut/types": ["packages/types/src/index.ts"],
       "@chut/user": ["packages/user/src/index.ts"]
     }
   },

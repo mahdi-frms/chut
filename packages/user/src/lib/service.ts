@@ -1,9 +1,5 @@
 import * as storage from '@chut/storage'
-
-interface User {
-  username: string,
-  password: string
-}
+import { User } from '@chut/types'
 
 export async function userCreate(user: User) {
   const user_string = JSON.stringify(user)
