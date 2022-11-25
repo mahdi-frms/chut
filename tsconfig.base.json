@@ -17,21 +17,22 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "esModuleInterop": true,
     "paths": {
-      "@chut/con-user": [
-        "packages/controllers/user/src/index.ts"
-      ],
       "@chut/auth": [
         "packages/services/auth/src/index.ts"
+      ],
+      "@chut/con-user": [
+        "packages/controllers/user/src/index.ts"
       ],
       "@chut/storage": [
         "packages/services/storage/src/index.ts"
       ],
-      "@chut/user": [
-        "packages/services/user/src/index.ts"
-      ],
       "@chut/types": [
         "packages/types/src/index.ts"
+      ],
+      "@chut/user": [
+        "packages/services/user/src/index.ts"
       ]
     }
   },
