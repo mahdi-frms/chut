@@ -14,7 +14,11 @@ async function set(key: string, value: string) {
   await client.set(key, value)
 }
 
+async function setIfNotExist(key: string, value: string): Promise<boolean> {
+  return await client.setNX(key, value)
+}
+
 export {
   connect,
-  get, set
+  get, set, setIfNotExist as setIfNotExist
 }
