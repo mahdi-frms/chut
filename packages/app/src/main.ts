@@ -1,11 +1,11 @@
 import express from 'express'
 import { connect as dbConnect } from '@chut/storage'
-import { routes as UserRoute } from '@chut/con-user'
+import { routes } from '@chut/con-user'
 
 const app = express()
 app.use(express.json())
 
-app.use('/user', UserRoute)
+app.use('/user', routes)
 app.get('/echo', (req, res) => {
     res.send('hello').end()
 })
