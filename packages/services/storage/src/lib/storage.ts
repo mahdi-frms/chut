@@ -1,9 +1,10 @@
 import * as redis from 'redis';
 
-const client = redis.createClient();
+const client = redis.createClient({ url: process.env['REDIS_URL'] });
 
 async function connect() {
   await client.connect();
+  console.log('connection to redis established...')
 }
 
 async function get(key: string) {

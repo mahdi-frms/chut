@@ -1,11 +1,19 @@
 import express from 'express'
+import { connect as dbConnect } from '@chut/storage'
 import { routes as UserRoute } from '@chut/con-user'
 
-const app = express()
+async function main() {
 
-app.use('/user', UserRoute)
-app.get('/echo', (req, res) => {
-    res.send('hello').end()
-})
+    await dbConnect()
 
-app.listen(process.env.PORT || 3000);
+    const app = express()
+
+    app.use('/user', UserRoute)
+    app.get('/echo', (req, res) => {
+        res.send('hello').end()
+    })
+
+    app.listen(process.env.PORT || 3000);
+}
+
+main()
