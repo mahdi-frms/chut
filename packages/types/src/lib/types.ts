@@ -6,4 +6,5 @@ export interface User {
 export enum Status {
   Sucess = 0,
   InvalidCredentials = 1,
+  UnavailableUsername
 }
