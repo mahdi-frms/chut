@@ -10,3 +10,5 @@ export enum Status {
   TokenNotProvided = 3,
   InvalidToken = 4,
 }
+
+export const JwtCookie = "jwt-token"
