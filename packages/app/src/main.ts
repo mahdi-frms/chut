@@ -1,13 +1,13 @@
 import express from 'express'
 import { connect as dbConnect } from '@chut/storage'
-import { routes } from '@chut/con-user'
+import { routes as userRoutes } from '@chut/con-user'
 import cookieParser from 'cookie-parser'
 
 const app = express()
 app.use(express.json())
 app.use(cookieParser())
 
-app.use('/user', routes)
+app.use('/api', userRoutes)
 app.get('/echo', (req, res) => {
     res.send('hello').end()
 })
