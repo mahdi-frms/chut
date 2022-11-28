@@ -13,7 +13,7 @@ route.use(async (req, res) => {
     else {
         const token = await Auth.generateToken(user);
         res.cookie(JwtCookie, token)
-        res.status(200).send({ status: Status.Sucess })
+        res.status(200).send({ status: Status.Success })
     }
 })
 

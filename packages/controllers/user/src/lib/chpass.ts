@@ -14,7 +14,7 @@ route.use(async (req, res) => {
     else {
         user.password = newPassword;
         await userUpdate(user);
-        res.status(200).send({ status: Status.Sucess });
+        res.status(200).send({ status: Status.Success });
     }
 })
 
