@@ -21,3 +21,17 @@ export async function generateToken(user: User): Promise<string> {
     });
   });
 }
+
+export async function jwtAuth(token: string): Promise<User | null> {
+  return new Promise<User | null>((resolve) => {
+    jwt.verify(token, JWT_KEY, {}, async (err, tkn) => {
+      if (err || !tkn) return resolve(null);
+      const { username } = tkn as { username: string };
+      const user = await UserService.userGet(username);
+      if (!user)
+        resolve(null)
+      else
+        resolve(user)
+    });
+  });
+}
