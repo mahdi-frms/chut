@@ -2,10 +2,11 @@ import { Router } from 'express'
 import { Status } from '@chut/types'
 import * as UserService from '@chut/user'
 import * as MessageService from '@chut/message'
+import { jwtAuth } from '@chut/mid-auth'
 
 export const route = Router()
 
-route.use(async (req, res) => {
+route.post('/send', jwtAuth, async (req, res) => {
     const { username, text } = req.body;
     if (!await UserService.userGet(username))
         res.status(400).send({ status: Status.ReceiverIDInvalid })
