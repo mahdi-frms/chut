@@ -9,6 +9,7 @@
   },
   "private": true,
   "dependencies": {
+    "cookie-parser": "^1.4.6",
     "express": "*",
     "jsonwebtoken": "*",
     "redis": "*",
@@ -23,6 +24,7 @@
     "@nrwl/node": "15.2.1",
     "@nrwl/nx-cloud": "latest",
     "@nrwl/workspace": "15.2.1",
+    "@types/cookie-parser": "^1.4.3",
     "@types/express": "*",
     "@types/jest": "28.1.1",
     "@types/jsonwebtoken": "*",

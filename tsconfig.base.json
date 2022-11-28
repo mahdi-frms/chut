@@ -10,34 +10,19 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "esModuleInterop": true,
     "paths": {
-      "@chut/auth": [
-        "packages/services/auth/src/index.ts"
-      ],
-      "@chut/con-user": [
-        "packages/controllers/user/src/index.ts"
-      ],
-      "@chut/storage": [
-        "packages/services/storage/src/index.ts"
-      ],
-      "@chut/types": [
-        "packages/types/src/index.ts"
-      ],
-      "@chut/user": [
-        "packages/services/user/src/index.ts"
-      ]
+      "@chut/auth": ["packages/services/auth/src/index.ts"],
+      "@chut/con-user": ["packages/controllers/user/src/index.ts"],
+      "@chut/mid-auth": ["packages/midwares/auth/src/index.ts"],
+      "@chut/storage": ["packages/services/storage/src/index.ts"],
+      "@chut/types": ["packages/types/src/index.ts"],
+      "@chut/user": ["packages/services/user/src/index.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }
