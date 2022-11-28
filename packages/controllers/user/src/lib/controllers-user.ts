@@ -5,7 +5,7 @@ import logout from './logout'
 import { Router } from 'express'
 
 export const routes = Router();
-routes.post('/login', login);
-routes.post('/register', register);
-routes.post('/chpass', chpass);
-routes.post('/logout', logout);
+routes.use(login);
+routes.use(register);
+routes.use(chpass);
+routes.use(logout);

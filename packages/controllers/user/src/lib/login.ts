@@ -4,7 +4,7 @@ import { Router } from 'express'
 
 const route = Router();
 
-route.use(async (req, res) => {
+route.post('/login', async (req, res) => {
     const { username, password } = req.body;
     const user = await Auth.userAuth(username, password);
     if (!user) {

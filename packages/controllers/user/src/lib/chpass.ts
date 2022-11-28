@@ -4,9 +4,8 @@ import { jwtAuth, reqUser } from '@chut/mid-auth'
 import { userUpdate } from '@chut/user';
 
 const route = Router();
-route.use(jwtAuth)
 
-route.use(async (req, res) => {
+route.post('/chpass', jwtAuth, async (req, res) => {
     const { oldPassword, newPassword } = req.body;
     const user = reqUser(req);
     if (user.password != oldPassword)

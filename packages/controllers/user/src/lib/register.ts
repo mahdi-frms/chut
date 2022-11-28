@@ -5,7 +5,7 @@ import { Router } from 'express'
 
 const route = Router();
 
-route.use(async (req, res) => {
+route.post('/register', async (req, res) => {
     const { username, password } = req.body;
     const user = { username, password };
     if (!await UserService.userCreate(user)) {

@@ -3,9 +3,8 @@ import { Status, JWT_COOKIE } from '@chut/types';
 import { Router } from 'express'
 
 const route = Router();
-route.use(jwtAuth)
 
-route.use(async (req, res) => {
+route.post('/logout', jwtAuth, async (req, res) => {
     res.clearCookie(JWT_COOKIE);
     res.status(200).send({ status: Status.Success });
 })
