@@ -1,5 +1,5 @@
 import * as Auth from '@chut/auth'
-import { Status, JwtCookie } from '@chut/types';
+import { Status, JWT_COOKIE } from '@chut/types';
 import { Router } from 'express'
 
 const route = Router();
@@ -12,7 +12,7 @@ route.use(async (req, res) => {
     }
     else {
         const token = await Auth.generateToken(user);
-        res.cookie(JwtCookie, token)
+        res.cookie(JWT_COOKIE, token)
         res.status(200).send({ status: Status.Success })
     }
 })

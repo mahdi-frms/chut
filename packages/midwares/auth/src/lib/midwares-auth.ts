@@ -1,5 +1,5 @@
 import { Request, Router } from 'express'
-import { Status, User } from '@chut/types'
+import { Status, User, JWT_COOKIE } from '@chut/types'
 import * as Auth from '@chut/auth'
 
 export const jwtAuth = Router()
@@ -9,7 +9,7 @@ export function reqUser(req: Request): User {
 }
 
 jwtAuth.use(async (req, res, next) => {
-  const tkn = req.cookies['jwt-token'];
+  const tkn = req.cookies[JWT_COOKIE];
   if (!tkn)
     res.status(401).send({ status: Status.TokenNotProvided });
   else {

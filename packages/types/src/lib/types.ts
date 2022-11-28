@@ -11,4 +11,4 @@ export enum Status {
   InvalidToken = 4,
 }
 
-export const JwtCookie = "jwt-token"
+export const JWT_COOKIE = "jwt-token"
