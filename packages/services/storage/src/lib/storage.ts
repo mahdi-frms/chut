@@ -2,21 +2,29 @@ import * as redis from 'redis';
 
 const client = redis.createClient({ url: process.env['REDIS_URL'] });
 
-async function connect() {
+const MAX_INT = 4294967295;
+
+export async function connect() {
   await client.connect();
   console.log('connection to redis established...')
 }
 
-async function get(key: string) {
+export async function get(key: string) {
   return await client.get(key);
 }
 
-async function set(key: string, value: string) {
+export async function set(key: string, value: string) {
   await client.set(key, value);
 }
 
-async function setIfNotExist(key: string, value: string): Promise<boolean> {
-  return await client.setNX(key, value);
+export async function push(key: string, value: string) {
+  await client.lPush(key, value);
 }
 
-export { connect, get, set, setIfNotExist as setIfNotExist };
+export async function pop(key: string) {
+  await client.brPop(key, MAX_INT);
+}
+
+export async function setIfNotExist(key: string, value: string): Promise<boolean> {
+  return await client.setNX(key, value);
+}
