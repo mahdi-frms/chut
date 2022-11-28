@@ -9,6 +9,7 @@ export enum Status {
   UnavailableUsername = 2,
   TokenNotProvided = 3,
   InvalidToken = 4,
+  ReceiverIDInvalid = 5,
 }
 
 export const JWT_COOKIE = "jwt-token"

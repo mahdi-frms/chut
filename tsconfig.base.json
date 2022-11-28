@@ -17,6 +17,7 @@
     "esModuleInterop": true,
     "paths": {
       "@chut/auth": ["packages/services/auth/src/index.ts"],
+      "@chut/con-message": ["packages/controllers/message/src/index.ts"],
       "@chut/con-user": ["packages/controllers/user/src/index.ts"],
       "@chut/message": ["packages/services/message/src/index.ts"],
       "@chut/mid-auth": ["packages/midwares/auth/src/index.ts"],
